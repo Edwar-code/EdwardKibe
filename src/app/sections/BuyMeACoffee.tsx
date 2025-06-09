@@ -66,10 +66,10 @@ const BuyMeACoffee = () => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
       <div className="bg-white rounded-lg p-8 shadow-2xl w-full max-w-md transform transition-all">
         <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-800">Buy Me a Coffee</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Buy me Coffee</h2>
             <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800 text-2xl">×</button>
         </div>
-        <p className="text-gray-600 mb-6">Your support helps me keep creating. Asante sana!</p>
+        <p className="text-gray-600 mb-6">For the love of creating (and the need for caffeine) Asante sana!</p>
 
         <div className="bg-gray-100 p-4 rounded-lg mb-6 text-center">
             <p className="text-lg font-medium text-gray-700">You're donating:</p>
