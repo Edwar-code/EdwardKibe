@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { PayheroClient } from '@/lib/payhero'; // Import the new client
+import { PayheroClient } from '../../../lib/payhero'; // Import the new client
 
 /**
  * This API handler now uses the PayheroClient to initiate payments.
