@@ -6,7 +6,9 @@ import About from '../sections/About'
 import Contact from '../sections/Contact'
 import Footer from '../sections/Footer'
 import Navbar from '../sections/Navbar'
-import BuyMeACoffee from '@/components/BuyMeACoffee' // <-- IMPORT THE COMPONENT
+// Previous import was from '@/components/BuyMeACoffee'
+// This is the new, correct import path:
+import BuyMeACoffee from '../sections/BuyMeACoffee' // <-- THE PATH IS UPDATED HERE
 
 function Home() {
   return (
@@ -19,7 +21,7 @@ function Home() {
       <About />
       <Contact />
       <Footer />
-      <BuyMeACoffee /> {/* <-- ADD THE COMPONENT HERE */}
+      <BuyMeACoffee /> {/* This part stays the same */}
     </div>
   )
 }
