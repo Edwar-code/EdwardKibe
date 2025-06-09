@@ -1,0 +1,122 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+"Homepage": {
+  "availability": "Available for new projects",
+  "title": "Edward Kibe Munene (Part-Time Developer)",
+  "description": "Still in Kenya, I specialize in transforming ideas and designs into modern, high quality web applications for clients Worldwide",
+  "buttonExplore": "My Works",
+  "buttonContact": "Say Hi!",
+  "buttonViewCV": "View CV"
+  },
+  "Projects": {
+    "header": "CEO, Krinzie Devs",
+    "title": "Featured Projects",
+    "description": "I bring thoughts to life through interactive digital solutions",
+    "Project": {
+      "Avenue Fashion": {
+        "type": "Shopping",
+        "technologies1": "React, Javascript, Node.js",
+        "technologies2": "Material UI, MySQL, Firebase",
+        "technologies3": "Express, Vite, Joi"
+      },
+      "Area254": {
+        "type": "Lets Chat and Interact",
+        "technologies1": "React, Javascript, Typescript, Node.js",
+        "technologies2": "Next.js, Next-intl, Next-themes",
+        "technologies3": "TailwindCSS, framer-motion"
+      },
+      "KeMUN Connect": {
+        "type": "Engage in Diplomatic connects",
+        "technologies1": "React, Javascript, Typescript, Node.js",
+        "technologies2": "Next.js, framer-motion",
+        "technologies3": "TailwindCSS, twMerge"
+      },
+      "comingSoonTitle": "Project",
+      "comingSoon": "Building Project...Coming Soon"
+    },
+    "buttonVisit": "Visit Live Site"
+  },
+  "Banner": {
+    "word1": "Performant",
+    "word2": "Accessible",
+    "word3": "Secure",
+    "word4": "Interactive",
+    "word5": "Scalable",
+    "word6": "User Friendly",
+    "word7": "Responsive",
+    "word8": "Maintainable",
+    "word9": "Search Optimized",
+    "word10": "Usable",
+    "word11": "Reliable"
+  },
+  "References": {
+    "sectionHeader": {
+      "header": "Happy Clients",
+      "title": "What's Said about Me",
+      "description": "Don't just take my word for it. See what people that worked with me have to say."
+    },
+    "neueTraditionen": {
+      "position": "CEO, Area 254",
+      "recommendation": "\"I have had the pleasure of working closely with him for three months, and I am confident in his abilities, dedication, passion for teamwork... He was a pivotal member of a three-developer team that successfully built a minimum viable product (MVP) for our company.\""
+    },
+    "organicsBest": {
+      "position": "Founder, Avenue Fashion",
+      "recommendation": "\"Mr. Edward has a high degree of personal initiative, which meant that he regularly made his own concrete suggestions that helped us fully exploit any potential for improvement. In high-pressure situations Mr. Levin always kept a cool head and completed all tasks in time with high quality\""
+    },
+    "pinkHouseHostel": {
+      "position": "Local Secretariat, KeMUN Connect",
+      "recommendation": "\"Ed impressed us with his creativity and understanding of modern web technologies. His work has significantly improved the usability of our platform and led to positive...\""
+    }
+  },
+  "About": {
+    "sectionHeader": {
+      "header": "About Me",
+      "title": "Education",
+      "description": "Pursuing Bachelor of Arts in International Relations at Kenya Methodist University."
+    },
+
+    "books": {
+      "booksHeader": {
+        "title": "Literature",
+        "description": "Books that shaped my perspectives"
+      }
+    },
+    "hobbies": {
+      "hobbiesCard": {
+        "title": "Aside from Tech",
+        "description": "I Like"
+      },
+      "meditating": "CNC Designing",
+      "gaming": "Gaming",
+      "reading": "Reading",
+      "cooking": "Cooking",
+      "traveling": "Traveling"
+    },
+    "toolboxCard": {
+      "title": "My Toolbox",
+      "description": "The technologies and tools I use to bring Websites & Apps to life"
+    }
+  },
+  "Contact": {
+    "title": "Transform your ideas into Reality",
+    "description": "Ready to bring your next project to life? Let's connect and discover how I can help you achieve your goals.",
+    "emailText": "E-Mail",
+    "contactForm": {
+      "header": "Feel free to reach out",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
+    }
+  },
+  "Footer": {
+    "rights": "2025. All rights reserved.",
+    "location": "Worldwide"
+  }
+}

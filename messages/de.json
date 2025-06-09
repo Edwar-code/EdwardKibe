@@ -1,0 +1,124 @@
+{
+  "Navbar": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "Homepage": {
+    "availability": "Disponible pour de nouveaux projets",
+    "title": "Edward Kibe Munene (Développeur à temps partiel)",
+    "description": "Toujours au Kenya, je me spécialise dans la transformation d'idées et de conceptions en applications web modernes et de haute qualité pour des clients dans le monde entier",
+    "buttonExplore": "Mes réalisations",
+    "buttonContact": "Dites Bonjour!"
+  },
+  "Projects": {
+    "header": "PDG, Krinzie Devs",
+    "title": "Projets phares",
+    "description": "Je donne vie aux idées à travers des solutions numériques interactives",
+    "Project": {
+      "Avenue Fashion": {
+        "type": "Shopping",
+        "technologies1": "React, Javascript, Node.js",
+        "technologies2": "Material UI, MySQL, Firebase",
+        "technologies3": "Express, Vite, Joi"
+      },
+      "Area254": {
+        "type": "Discutons et interagissons",
+        "technologies1": "React, Javascript, Typescript, Node.js",
+        "technologies2": "Next.js, Next-intl, Next-themes",
+        "technologies3": "TailwindCSS, framer-motion"
+      },
+      "KeMUN Connect": {
+        "type": "Échange diplomatique",
+        "technologies1": "React, Javascript, Typescript, Node.js",
+        "technologies2": "Next.js, framer-motion",
+        "technologies3": "TailwindCSS, twMerge"
+      },
+      "comingSoonTitle": "Projet",
+      "comingSoon": "Projet en construction... Arrivant bientôt"
+    },
+    "buttonVisit": "Visiter le site en direct"
+  },
+  "Banner": {
+    "word1": "Performant",
+    "word2": "Accessible",
+    "word3": "Sécurisé",
+    "word4": "Interactif",
+    "word5": "Scalable",
+    "word6": "Convivial",
+    "word7": "Réactif",
+    "word8": "Maintenable",
+    "word9": "Optimisé pour la recherche",
+    "word10": "Utilisable",
+    "word11": "Fiable"
+  },
+  "References": {
+    "sectionHeader": {
+      "header": "Clients satisfaits",
+      "title": "Ce qu'on dit de moi",
+      "description": "Ne vous fiez pas seulement à mes paroles. Découvrez ce que les personnes qui ont travaillé avec moi ont à dire."
+    },
+    "neueTraditionen": {
+      "position": "PDG, Area 254",
+      "recommendation": "\"J'ai eu le plaisir de travailler en étroite collaboration avec lui pendant trois mois, et j'ai confiance en ses capacités, son engagement, sa passion pour le travail en équipe... Il a été un membre clé d'une équipe de trois développeurs qui a réussi à créer un produit minimum viable (MVP) pour notre entreprise.\""
+    },
+    "organicsBest": {
+      "position": "Fondateur, Avenue Fashion",
+      "recommendation": "\"M. Edward fait preuve d'une grande initiative personnelle, ce qui signifie qu'il faisait régulièrement ses propres suggestions concrètes qui nous ont permis d'exploiter pleinement tout potentiel d'amélioration. Dans des situations stressantes, M. Levin a toujours gardé son calme et a réalisé toutes les tâches dans les délais et avec une grande qualité.\""
+    },
+    "pinkHouseHostel": {
+      "position": "Secrétariat local, KeMUN Connect",
+      "recommendation": "\"Ed nous a impressionnés par sa créativité et sa compréhension des technologies web modernes. Son travail a considérablement amélioré l'utilisabilité de notre plateforme et a conduit à des résultats positifs...\""
+    },
+    "healingArts": {
+      "position": "PDG, HealingArts",
+      "recommendation": "\"Travailler avec Moses a été un plaisir. Il a su m'expliquer les exigences techniques du projet, et j'ai particulièrement apprécié sa profonde compréhension de ma vision...\""
+    }
+  },
+  "About": {
+    "sectionHeader": {
+      "header": "À propos de moi",
+      "title": "Éducation",
+      "description": "Poursuite d'un Bachelor of Arts en Relations Internationales à l'Université Méthodiste du Kenya."
+    },
+    "books": {
+      "booksHeader": {
+        "title": "Ce que je lis",
+        "description": "Les livres qui ont façonné mes perspectives"
+      }
+    },
+    "hobbies": {
+      "hobbiesCard": {
+        "title": "En dehors du codage",
+        "description": "J'aime"
+      },
+      "meditating": "Conception CNC",
+      "gaming": "Jeux vidéo",
+      "reading": "Lecture",
+      "cooking": "Cuisine",
+      "traveling": "Voyages"
+    },
+    "toolboxCard": {
+      "title": "Ma boîte à outils",
+      "description": "Les technologies et outils que j'utilise pour donner vie aux sites Web et applications"
+    }
+  },
+  "Contact": {
+    "title": "Transformez vos idées en réalité",
+    "description": "Prêt à donner vie à votre prochain projet? Connectons-nous et découvrons comment je peux vous aider à atteindre vos objectifs.",
+    "emailText": "E-Mail",
+    "contactForm": {
+      "header": "N'hésitez pas à me contacter",
+      "name": "Nom",
+      "email": "E-Mail",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi en cours..."
+    }
+  },
+  "Footer": {
+    "rights": "2025. Tous droits réservés.",
+    "location": "Partout dans le monde"
+  }
+}
