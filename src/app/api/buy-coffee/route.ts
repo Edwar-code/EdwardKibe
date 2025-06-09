@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { MpesaClient } from '@/lib/mpesa'; // Make sure the MpesaClient is in src/lib/mpesa.ts
+import { MpesaClient } from '../../../lib/mpesa'; // Adjusted the path to match the correct location
 
 /**
  * This is the API handler for initiating the "Buy Me a Coffee" payment.
