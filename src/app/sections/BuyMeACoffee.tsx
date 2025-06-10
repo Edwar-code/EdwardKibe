@@ -15,7 +15,7 @@ const BuyMeACoffee = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const coffeePrice = 100; // KES 100 per coffee
+  const coffeePrice = 1000; // KES 1000 per coffee
   const totalAmount = numberOfCoffees * coffeePrice;
 
   const handleSubmit = async (e: React.FormEvent) => {
