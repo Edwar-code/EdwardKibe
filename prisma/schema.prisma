@@ -1,15 +1,21 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+// This is the data source. It tells Prisma you are using MongoDB
+// and where to find your database connection string in the .env file.
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+// This tells Prisma how to generate the client code.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// This is the model for your data. It defines the structure
+// of a "Donation" record in your database.
+model Donation {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  amount    Int      // The donation amount in KES
+  createdAt DateTime @default(now())
 }
