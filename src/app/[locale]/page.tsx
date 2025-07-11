@@ -1,3 +1,6 @@
+'use client'; // <-- This page must be a client component to use state
+
+import { useState } from 'react'; // <-- Import useState
 import Hero from '../sections/Hero'
 import Projects from '../sections/Projects'
 import Banner from '../sections/Banner'
@@ -6,11 +9,26 @@ import About from '../sections/About'
 import Contact from '../sections/Contact'
 import Footer from '../sections/Footer'
 import Navbar from '../sections/Navbar'
-// Previous import was from '@/components/BuyMeACoffee'
-// This is the new, correct import path:
-import BuyMeACoffee from '../sections/BuyMeACoffee' // <-- THE PATH IS UPDATED HERE
+import BuyMeACoffee from '../sections/BuyMeACoffee'
+import ThankYouSection from '../sections/ThankYouSection'; // <-- Import the new section
 
 function Home() {
+  // Add a state variable to track whether to show the thank you message
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  // If showThankYou is true, we ONLY show the Navbar and the ThankYouSection.
+  if (showThankYou) {
+    return (
+      <div>
+        <Navbar />
+        {/* Pass a function to the component so it knows how to go back */}
+        <ThankYouSection onReturnHome={() => setShowThankYou(false)} />
+        <Footer />
+      </div>
+    );
+  }
+
+  // Otherwise, we show the normal homepage content.
   return (
     <div>
       <Navbar />
@@ -21,9 +39,10 @@ function Home() {
       <About />
       <Contact />
       <Footer />
-      <BuyMeACoffee /> {/* This part stays the same */}
+      {/* Pass the function to BuyMeACoffee so it can update our state */}
+      <BuyMeACoffee onPaymentSuccess={() => setShowThankYou(true)} />
     </div>
   )
 }
 
-export default Home
+export default Home;
