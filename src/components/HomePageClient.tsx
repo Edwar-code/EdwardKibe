@@ -1,16 +1,23 @@
 'use client'; // This component handles all the interactivity
 
 import { useState } from 'react';
-import Hero from '../sections/Hero';
-import Projects from '../sections/Projects';
-import Banner from '../sections/Banner';
-import References from '../sections/References';
-import About from '../sections/About';
-import Contact from '../sections/Contact';
-import Footer from '../sections/Footer';
-import Navbar from '../sections/Navbar';
-import BuyMeACoffee from '../sections/BuyMeACoffee';
-import ThankYouSection from '../sections/ThankYouSection';
+
+// === CORRECTED IMPORT PATHS START HERE ===
+// Instead of '../sections/...', we use '@/src/app/sections/...'
+// Or, if your alias is configured for `src`, it would be '@/app/sections/...'
+// Let's use the most explicit path to be safe.
+import Hero from '@/src/app/sections/Hero';
+import Projects from '@/src/app/sections/Projects';
+import Banner from '@/src/app/sections/Banner';
+import References from '@/src/app/sections/References';
+import About from '@/src/app/sections/About';
+import Contact from '@/src/app/sections/Contact';
+import Footer from '@/src/app/sections/Footer';
+import Navbar from '@/src/app/sections/Navbar';
+import BuyMeACoffee from '@/src/app/sections/BuyMeACoffee';
+import ThankYouSection from '@/src/app/sections/ThankYouSection';
+// === CORRECTED IMPORT PATHS END HERE ===
+
 
 // This new component contains all the logic that requires 'use client'
 export default function HomePageClient() {
