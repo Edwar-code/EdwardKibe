@@ -1,10 +1,26 @@
-// This page is a Server Component again. No 'use client', no state.
-// This fixes the 404 error permanently.
+import Hero from '../sections/Hero';
+import Projects from '../sections/Projects';
+import Banner from '../sections/Banner';
+import References from '../sections/References';
+import About from '../sections/About';
+import Contact from '../sections/Contact';
+import Footer from '../sections/Footer';
+import Navbar from '../sections/Navbar';
+import BuyMeACoffee from '../sections/BuyMeACoffee';
 
-// === THE ONLY CHANGE IS THIS ONE LINE ===
-import HomepageView from '@/app/components/HomepageView';
-
+// This is the original, working version of your Home page.
 export default function Home() {
-  // All it does is render the client component that holds all our logic.
-  return <HomepageView />;
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+      <Projects />
+      <Banner />
+      <References />
+      <About />
+      <Contact />
+      <Footer />
+      <BuyMeACoffee />
+    </div>
+  );
 }
