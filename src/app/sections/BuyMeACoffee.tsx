@@ -111,8 +111,8 @@ export default function BuyMeACoffee() {
         {/* Change 6: Add the Progress Bar section to the UI */}
         <div className="mb-6">
             <div className="flex justify-between items-end mb-1 text-sm font-medium text-gray-700">
-                <span>Raised: KES {currentRaised.toLocaleString()}</span>
-                <span className="text-gray-500">Goal: KES {goalAmount.toLocaleString()}</span>
+                <span>Raised</span>
+                <span className="text-gray-500">Goal</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
                 {isLoadingProgress ? (
@@ -128,7 +128,7 @@ export default function BuyMeACoffee() {
             </div>
         </div>
 
-        <p className="text-gray-600 mb-6">For the love of creating (and the need for caffeine) Asante sana!</p>
+        <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee) Asante sana!</p>
 
         <div className="bg-gray-100 p-4 rounded-lg mb-6 text-center">
             <p className="text-lg font-medium text-gray-700">You're donating:</p>
@@ -142,8 +142,8 @@ export default function BuyMeACoffee() {
 
         <form onSubmit={handlePaystackSubmit}>
           <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Jane Doe" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g.,Edward" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email Address</label>
