@@ -8,8 +8,7 @@ const CoffeeIcon = () => (
     </svg>
 );
 
-// This is the original M-Pesa version of your component.
-export default function BuyMeACoffee() {
+const BuyMeACoffee = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [numberOfCoffees, setNumberOfCoffees] = useState(1);
@@ -25,7 +24,6 @@ export default function BuyMeACoffee() {
     setMessage('');
 
     try {
-      // NOTE: This assumes you have a working API route at '/api/buy-coffee'
       const res = await fetch('/api/buy-coffee', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -101,4 +99,7 @@ export default function BuyMeACoffee() {
       </div>
     </div>
   );
-}
+};
+
+export default BuyMeACoffee;
+```
