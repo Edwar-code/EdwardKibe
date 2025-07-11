@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
+// Change 1: Import the hook from the react-paystack library
+import { usePaystackPayment } from 'react-paystack';
 
 const CoffeeIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
@@ -8,9 +10,11 @@ const CoffeeIcon = () => (
     </svg>
 );
 
-const BuyMeACoffee = () => {
+// This is the updated component using Paystack
+export default function BuyMeACoffee() {
   const [isOpen, setIsOpen] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  // Change 2: Replace 'phoneNumber' state with 'email' state. Paystack requires an email.
+  const [email, setEmail] = useState('');
   const [numberOfCoffees, setNumberOfCoffees] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -18,36 +22,43 @@ const BuyMeACoffee = () => {
   const coffeePrice = 1000; // KES 1000 per coffee
   const totalAmount = numberOfCoffees * coffeePrice;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Change 3: Create the configuration object for Paystack
+  const config = {
+      reference: (new Date()).getTime().toString(), // Creates a unique reference for each transaction
+      email: email,
+      amount: totalAmount * 100, // Paystack wants the amount in the smallest currency unit (cents)
+      publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '',
+      currency: 'KES',
+  };
+
+  // Change 4: Initialize the Paystack payment hook
+  const initializePayment = usePaystackPayment(config);
+
+  // Change 5: Define the callback functions for success and close events
+  const onSuccess = (reference: any) => {
+    console.log("Payment successful. Reference:", reference);
+    setMessage("✅ Asante sana! Your support is much appreciated.");
+    setIsLoading(false);
+    setTimeout(() => {
+      setIsOpen(false);
+      setMessage('');
+      setEmail(''); // Reset email field
+    }, 5000);
+  };
+
+  const onClose = () => {
+    // This is called if the user closes the payment popup
+    setIsLoading(false);
+    console.log('Payment popup closed.');
+  };
+
+  // Change 6: This is the new function that will be called when the form is submitted
+  const handlePaystackSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setMessage('');
-
-    try {
-      const res = await fetch('/api/buy-coffee', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber, amount: totalAmount }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.message || 'Something went wrong.');
-      }
-
-      setMessage("✅ Success! Check your phone to complete the payment.");
-      setTimeout(() => {
-        setIsOpen(false);
-        setMessage('');
-        setPhoneNumber('');
-      }, 5000);
-
-    } catch (error: any) {
-      setMessage(`❌ Error: ${error.message}`);
-    } finally {
-      setIsLoading(false);
-    }
+    // This function triggers the Paystack popup
+    initializePayment({onSuccess, onClose});
   };
 
   if (!isOpen) {
@@ -62,12 +73,13 @@ const BuyMeACoffee = () => {
     );
   }
 
+  // The entire design of your popup modal is preserved below.
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
       <div className="bg-white rounded-lg p-8 shadow-2xl w-full max-w-md transform transition-all">
         <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-gray-800">Buy me Coffee</h2>
-            <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800 text-2xl">×</button>
+            <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800 text-2xl" disabled={isLoading}>×</button>
         </div>
         <p className="text-gray-600 mb-6">For the love of creating (and the need for caffeine) Asante sana!</p>
 
@@ -75,24 +87,29 @@ const BuyMeACoffee = () => {
             <p className="text-lg font-medium text-gray-700">You're donating:</p>
             <p className="text-4xl font-extrabold text-indigo-600">KES {totalAmount}</p>
             <div className="flex justify-center items-center gap-2 mt-3">
-                <button onClick={() => setNumberOfCoffees(v => Math.max(1, v - 1))} className="px-3 py-1 bg-gray-200 rounded-md">-</button>
+                <button onClick={() => setNumberOfCoffees(v => Math.max(1, v - 1))} className="px-3 py-1 bg-gray-200 rounded-md" disabled={isLoading}>-</button>
                 <span className="text-lg w-10 text-center">{numberOfCoffees} ☕️</span>
-                <button onClick={() => setNumberOfCoffees(v => v + 1)} className="px-3 py-1 bg-gray-200 rounded-md">+</button>
+                <button onClick={() => setNumberOfCoffees(v => v + 1)} className="px-3 py-1 bg-gray-200 rounded-md" disabled={isLoading}>+</button>
             </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        {/* Change 7: The form now calls our new handlePaystackSubmit function */}
+        <form onSubmit={handlePaystackSubmit}>
           <div className="mb-4">
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">M-Pesa Phone Number</label>
+            {/* The input field is updated for email */}
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email Address</label>
             <input
-              type="tel" id="phone" value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="e.g., 0712345678" required
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
-            {isLoading ? <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div> : `Donate KES ${totalAmount}`}
+            {isLoading ? <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div> : `Donate KES ${totalAmount} with Paystack`}
           </button>
         </form>
         {message && <p className={`mt-4 text-center text-sm font-medium ${message.includes('Error') ? 'text-red-600' : 'text-green-600'}`}>{message}</p>}
@@ -100,5 +117,3 @@ const BuyMeACoffee = () => {
     </div>
   );
 };
-
-export default BuyMeACoffee;
