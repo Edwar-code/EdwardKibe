@@ -56,7 +56,7 @@ export default function BuyMeACoffee() {
 
     // Optimistically update UI
     setCurrentRaised(prev => prev + totalAmount);
-    setMessage("✅ Asante sana! Your contribution has been recorded.");
+    setMessage("✅ Asante sana!");
     setTimeout(() => { setIsOpen(false); setMessage(''); setName(''); setEmail(''); }, 5000);
   };
 
@@ -85,7 +85,7 @@ export default function BuyMeACoffee() {
                 {isLoadingProgress ? ( <div className="h-4 bg-gray-300 rounded-full animate-pulse"></div> ) : ( <div className="bg-indigo-600 h-4 rounded-full text-center text-white text-xs font-bold leading-4 transition-all duration-1000" style={{ width: `${percentage}%` }} > {parseFloat(percentage) > 10 ? `${percentage}%` : ''} </div> )}
             </div>
         </div>
-        <p className="text-gray-600 mb-6">For the love of creating (and the need for caffee) Asante sana!</p>
+        <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee) Asante sana!</p>
         <div className="bg-gray-100 p-4 rounded-lg mb-6 text-center">
             <p className="text-lg font-medium text-gray-700">You're Supporting:</p>
             <p className="text-4xl font-extrabold text-indigo-600">KES {totalAmount}</p>
