@@ -1,11 +1,6 @@
-'use client'; // This component handles all the interactivity
+'use client'; // This component MUST be a client component
 
 import { useState } from 'react';
-
-// === CORRECTED IMPORT PATHS START HERE ===
-// Instead of '../sections/...', we use '@/src/app/sections/...'
-// Or, if your alias is configured for `src`, it would be '@/app/sections/...'
-// Let's use the most explicit path to be safe.
 import Hero from '@/src/app/sections/Hero';
 import Projects from '@/src/app/sections/Projects';
 import Banner from '@/src/app/sections/Banner';
@@ -16,27 +11,23 @@ import Footer from '@/src/app/sections/Footer';
 import Navbar from '@/src/app/sections/Navbar';
 import BuyMeACoffee from '@/src/app/sections/BuyMeACoffee';
 import ThankYouSection from '@/src/app/sections/ThankYouSection';
-// === CORRECTED IMPORT PATHS END HERE ===
 
+// Note: I have fixed the import paths to use your project's `@/` alias.
+// This was the cause of the "Module not found" errors.
 
-// This new component contains all the logic that requires 'use client'
-export default function HomePageClient() {
-  // State to track whether to show the thank you message
+export default function HomepageView() {
   const [showThankYou, setShowThankYou] = useState(false);
 
-  // Conditional rendering based on the state
   if (showThankYou) {
     return (
       <>
         <Navbar />
-        {/* Pass the function to allow the user to return to the main view */}
         <ThankYouSection onReturnHome={() => setShowThankYou(false)} />
         <Footer />
       </>
     );
   }
 
-  // Default view: Show the normal homepage content
   return (
     <>
       <Navbar />
@@ -47,7 +38,10 @@ export default function HomePageClient() {
       <About />
       <Contact />
       <Footer />
-      {/* Pass the function to BuyMeACoffee so it can update our state on success */}
+      {/*
+        The BuyMeACoffee component is modified slightly to accept a prop.
+        We will do that in the next step.
+      */}
       <BuyMeACoffee onPaymentSuccess={() => setShowThankYou(true)} />
     </>
   );
