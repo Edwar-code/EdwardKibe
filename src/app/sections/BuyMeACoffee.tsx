@@ -102,4 +102,3 @@ const BuyMeACoffee = () => {
 };
 
 export default BuyMeACoffee;
-```
