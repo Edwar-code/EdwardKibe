@@ -40,7 +40,8 @@ export default function BuyMeACoffee() {
     }
   }, [isOpen]);
 
-  // Paystack configuration
+  // --- THIS IS THE SECTION TO UPDATE ---
+  // Paystack configuration with Apple Pay enabled
   const config = {
       reference: (new Date()).getTime().toString(),
       email,
@@ -54,22 +55,21 @@ export default function BuyMeACoffee() {
           value: name
         }]
       },
+      // THIS IS THE NEWLY ADDED LINE
+      channels: ['card', 'mobile_money', 'applepay', 'googlepay'],
   };
 
   const initializePayment = usePaystackPayment(config);
 
-  // --- THIS IS THE CORRECTED SUCCESS HANDLER ---
   const onSuccess = (reference: any) => {
     console.log("Payment successful on client. Reference:", reference);
     console.log("The Paystack webhook is now responsible for saving this donation.");
     setIsLoading(false);
 
-    // The webhook will handle saving the donation. We only update the UI here.
-    
-    // 1. Optimistically update the UI to give the user instant feedback.
+    // Optimistically update the UI to give the user instant feedback.
     setCurrentRaised(prev => prev + totalAmount);
     
-    // 2. Show a thank you message and close the modal after a short delay.
+    // Show a thank you message and close the modal after a short delay.
     setMessage("✅ Asante sana! Your donation has been confirmed.");
     setTimeout(() => {
       setIsOpen(false);
