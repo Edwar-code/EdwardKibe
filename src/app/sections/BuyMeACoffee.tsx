@@ -62,7 +62,7 @@ export default function BuyMeACoffee() {
 
   const onClose = () => setIsLoading(false);
   const handlePaystackSubmit = (e: React.FormEvent) => { e.preventDefault(); setIsLoading(true); setMessage(''); initializePayment({onSuccess, onClose}); };
-  const handleDecrease = () => setTotalAmount(prev => Math.max(500, prev - 100));
+  const handleDecrease = () => setTotalAmount(prev => Math.max(10, prev - 100));
   const handleIncrease = () => setTotalAmount(prev => prev + 100);
   
   const percentage = Math.min(100, (currentRaised / goalAmount) * 100).toFixed(2);
