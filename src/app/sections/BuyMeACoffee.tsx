@@ -61,18 +61,13 @@ export default function BuyMeACoffee() {
 
   const initializePayment = usePaystackPayment(config);
 
-  // --- THIS IS THE CORRECTED SUCCESS HANDLER ---
   const onSuccess = (reference: any) => {
     console.log("Payment successful on client. Reference:", reference);
     console.log("The Paystack webhook is now responsible for saving this donation.");
     setIsLoading(false);
 
-    // The webhook will handle saving the donation. We only update the UI here.
-    
-    // 1. Optimistically update the UI to give the user instant feedback.
     setCurrentRaised(prev => prev + totalAmount);
     
-    // 2. Show a thank you message and close the modal after a short delay.
     setMessage("✅ Asante sana! Your donation has been confirmed.");
     setTimeout(() => {
       setIsOpen(false);
@@ -96,7 +91,7 @@ export default function BuyMeACoffee() {
 
   // Helper functions to increase/decrease the donation amount
   const handleDecrease = () => setTotalAmount(prev => Math.max(500, prev - 100));
-  const handleIncrease = ()_=> setTotalAmount(prev => prev + 100);
+  const handleIncrease = () => setTotalAmount(prev => prev + 100); // <-- THIS LINE IS NOW FIXED
   
   // Calculate the progress percentage for the progress bar
   const percentage = Math.min(100, (currentRaised / goalAmount) * 100).toFixed(2);
