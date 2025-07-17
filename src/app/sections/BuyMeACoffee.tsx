@@ -30,11 +30,14 @@ export default function BuyMeACoffee() {
       fetch('/api/get-total-donations')
         .then(res => res.json())
         .then(data => {
-          setCurrentRaised(data.total);
+          // Add 46000 to the fetched total
+          setCurrentRaised(data.total + 46000);
           setIsLoadingProgress(false);
         })
         .catch(error => {
           console.error("Failed to fetch donation total:", error);
+          // If fetch fails, you might still want to show the base amount
+          setCurrentRaised(46000);
           setIsLoadingProgress(false);
         });
     }
@@ -93,7 +96,7 @@ export default function BuyMeACoffee() {
 
   // Helper functions to increase/decrease the donation amount
   const handleDecrease = () => setTotalAmount(prev => Math.max(500, prev - 100));
-  const handleIncrease = () => setTotalAmount(prev => prev + 100);
+  const handleIncrease = ()_=> setTotalAmount(prev => prev + 100);
   
   // Calculate the progress percentage for the progress bar
   const percentage = Math.min(100, (currentRaised / goalAmount) * 100).toFixed(2);
