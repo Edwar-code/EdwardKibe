@@ -118,7 +118,7 @@ export default function BuyMeACoffee() {
         {/* Progress Bar */}
         <div className="mb-6">
             <div className="flex justify-between items-end mb-1 text-sm font-medium text-gray-700">
-           
+            <span className="text-gray-500">Status</span>
                 <span className="text-gray-500">Goal</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-4">
