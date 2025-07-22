@@ -65,7 +65,7 @@ function Projects() {
             { title: t(' Lets Watch') }, // You will need to add this translation
          
           ],
-          link: 'https://watch-ten-tau.vercel.app/', // <-- CHANGE THIS
+          link: 'https://watch-1ikt.vercel.app/', // <-- CHANGE THIS
           githublink: 'https://github.com/your-repo-link', // <-- CHANGE THIS
           image: projectImageWatch,
           ariaLabel: 'Watch -  Lets Watch',
