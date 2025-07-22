@@ -15,20 +15,7 @@ function Projects() {
   const t = useTranslations('Projects')
 
   const portfolioProject = [
-    // --- START: NEW PROJECT ADDED HERE ---
-    {
-      year: '2025', // <-- CHANGE THIS TO THE CORRECT YEAR
-      title: 'Watch',
-      type: t('Project.Watch.type'), // You will need to add this translation
-      result: [
-        { title: t('A Netflix replica Lets Watch') }, // You will need to add this translation
-     
-      ],
-      link: 'https://watch-ten-tau.vercel.app/', // <-- CHANGE THIS
-      githublink: 'https://github.com/your-repo-link', // <-- CHANGE THIS
-      image: projectImageWatch,
-      ariaLabel: 'Watch - A Netflix replica Lets Watch',
-    },
+
     // --- END: NEW PROJECT ---
     {
       year: '2024',
@@ -69,6 +56,20 @@ function Projects() {
       image: projectImageTarbutGan,
       ariaLabel: ' Diplomacy meets at KeMUN Connect ',
     },
+        // --- START: NEW PROJECT ADDED HERE ---
+        {
+          year: '2025', // <-- CHANGE THIS TO THE CORRECT YEAR
+          title: 'Watch',
+          type: t('Project.Watch.type'), // You will need to add this translation
+          result: [
+            { title: t(' Lets Watch') }, // You will need to add this translation
+         
+          ],
+          link: 'https://watch-ten-tau.vercel.app/', // <-- CHANGE THIS
+          githublink: 'https://github.com/your-repo-link', // <-- CHANGE THIS
+          image: projectImageWatch,
+          ariaLabel: 'Watch -  Lets Watch',
+        },
     // {
     //   year: 'YEAR',
     //   title: 'Project',
