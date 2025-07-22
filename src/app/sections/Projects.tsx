@@ -1,3 +1,4 @@
+import projectImageWatch from '@/src/assets/watch.png'; // <--- ADD THIS LINE
 import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
@@ -14,6 +15,21 @@ function Projects() {
   const t = useTranslations('Projects')
 
   const portfolioProject = [
+    // --- START: NEW PROJECT ADDED HERE ---
+    {
+      year: '2025', // <-- CHANGE THIS TO THE CORRECT YEAR
+      title: 'Watch',
+      type: t('Project.Watch.type'), // You will need to add this translation
+      result: [
+        { title: t('A Netflix replica Lets Watch') }, // You will need to add this translation
+     
+      ],
+      link: 'https://watch-ten-tau.vercel.app/', // <-- CHANGE THIS
+      githublink: 'https://github.com/your-repo-link', // <-- CHANGE THIS
+      image: projectImageWatch,
+      ariaLabel: 'Watch - A Netflix replica Lets Watch',
+    },
+    // --- END: NEW PROJECT ---
     {
       year: '2024',
       title: 'Avenue Fashion',
@@ -98,7 +114,7 @@ function Projects() {
                   {/*!!! div to hold gradient, project title line and secondary info all to be changed!!!*/}
                   <div className="bg-gradient-to-r from-orange-400 dark:from-emerald-300 to-amber-300 dark:to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text text-shadow dark:text-shadow-none">
                     <span>{project.type}</span>
-                    <span>&bull;</span>
+                    <span>•</span>
                     <span>{project.year}</span>
                   </div>
                   {/* project */}
