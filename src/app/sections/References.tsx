@@ -42,7 +42,7 @@ const reference = [
         <SectionHeader
           eyebrow={('Testimonials')}
           title={('References')}
-          description={t('')}
+          description={('')}
         />
         <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
           {/* use keyframe from tailwind config to animate, pause animation on hover */}
