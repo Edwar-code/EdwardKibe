@@ -40,9 +40,9 @@ const reference = [
     <div className="py-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow={t('sectionHeader.header')}
-          title={t('sectionHeader.title')}
-          description={t('sectionHeader.description')}
+          eyebrow={('Testimonials')}
+          title={('References')}
+          description={t('')}
         />
         <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
           {/* use keyframe from tailwind config to animate, pause animation on hover */}
