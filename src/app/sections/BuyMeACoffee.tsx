@@ -10,6 +10,15 @@ const CoffeeIcon = () => (
   </svg>
 );
 
+// --- NEW: Helper component for the edit icon ---
+const EditIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+        <path fillRule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clipRule="evenodd" />
+    </svg>
+);
+
+
 export default function BuyMeACoffee() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
@@ -73,7 +82,6 @@ export default function BuyMeACoffee() {
     // Add the KES equivalent to the raised amount
     setCurrentRaisedKES(prev => prev + amountInKES);
     
-    // --- RESTORED ORIGINAL SUCCESS MESSAGE ---
     setMessage("✅ Asante sana! Your donation has been confirmed.");
     setTimeout(() => {
       setIsOpen(false);
@@ -125,7 +133,6 @@ export default function BuyMeACoffee() {
         
         {/* Progress Bar (Displaying in USD) */}
         <div className="mb-6">
-            {/* --- RESTORED ORIGINAL TEXT LABELS --- */}
             <div className="flex justify-between items-end mb-1 text-sm font-medium text-gray-700">
                 <span className="text-gray-500">Status</span>
                 <span className="text-gray-500">Goal</span>
@@ -144,10 +151,9 @@ export default function BuyMeACoffee() {
             </div>
         </div>
         
-        {/* --- RESTORED ORIGINAL PARAGRAPH TEXT --- */}
         <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee). Asante sana!</p>
         
-        {/* Donation Amount Input (in USD) */}
+        {/* Donation Amount Input (in USD) with Edit Icon */}
         <div className="bg-gray-100 p-4 rounded-lg mb-6">
             <label htmlFor="donation-amount" className="block text-lg font-medium text-gray-700 mb-2 text-center">I'd like to support with:</label>
             <div className="flex items-center justify-center">
@@ -160,6 +166,10 @@ export default function BuyMeACoffee() {
                 className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-2xl font-extrabold text-indigo-600 text-center"
                 disabled={isLoading}
               />
+              {/* --- EDIT ICON ADDED HERE --- */}
+              <span className="ml-2">
+                <EditIcon />
+              </span>
             </div>
         </div>
         
@@ -167,7 +177,6 @@ export default function BuyMeACoffee() {
         <form onSubmit={handlePaystackSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            {/* --- RESTORED ORIGINAL NAME PLACEHOLDER --- */}
             <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Edward" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <div className="mb-4">
