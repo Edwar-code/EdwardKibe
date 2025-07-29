@@ -14,42 +14,47 @@ export default function BuyMeACoffee() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [totalAmount, setTotalAmount] = useState(200,000); // Default donation amount
+  // --- STATE NOW HANDLES USD ---
+  const [amountUSD, setAmountUSD] = useState(1500); // Default donation amount in USD
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
-  
-  // State for the progress bar
-  const [currentRaised, setCurrentRaised] = useState(0);
-  const [isLoadingProgress, setIsLoadingProgress] = useState(true);
-  const goalAmount = 200000; // --- GOAL AMOUNT UPDATED ---
 
-  // Effect to fetch the real total from the database when the component opens
+  // --- IMPORTANT: This is a fixed exchange rate. For a real app, fetch this from an API. ---
+  const USD_TO_KES_RATE = 130;
+  
+  // State for the progress bar (goal is now in USD)
+  const [currentRaisedKES, setCurrentRaisedKES] = useState(0); // Fetched total is in KES
+  const [isLoadingProgress, setIsLoadingProgress] = useState(true);
+  const goalAmountUSD = 2000; // The goal amount in USD
+
+  // Effect to fetch the real total from the database (which is in KES)
   useEffect(() => {
     if (isOpen) {
       setIsLoadingProgress(true);
       fetch('/api/get-total-donations')
         .then(res => res.json())
         .then(data => {
-          // Add 46000 to the fetched total
-          setCurrentRaised(data.total + 46000);
+          setCurrentRaisedKES(data.total + 46000); // The total from DB is in KES
           setIsLoadingProgress(false);
         })
         .catch(error => {
           console.error("Failed to fetch donation total:", error);
-          // If fetch fails, you might still want to show the base amount
-          setCurrentRaised(46000);
+          setCurrentRaisedKES(46000);
           setIsLoadingProgress(false);
         });
     }
   }, [isOpen]);
 
+  // --- CONVERT USD TO KES for Paystack ---
+  const amountInKES = amountUSD * USD_TO_KES_RATE;
+
   // Paystack configuration
   const config = {
       reference: (new Date()).getTime().toString(),
       email,
-      amount: totalAmount * 100, // Paystack amount is in kobo/cents
+      amount: Math.round(amountInKES * 100), // Paystack amount is in kobo, so we use the KES value
       publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '',
-      currency: 'KES',
+      currency: 'KES', // Paystack will process this in KES
       metadata: {
         custom_fields: [{
           display_name: "Donor Name",
@@ -63,12 +68,12 @@ export default function BuyMeACoffee() {
 
   const onSuccess = (reference: any) => {
     console.log("Payment successful on client. Reference:", reference);
-    console.log("The Paystack webhook is now responsible for saving this donation.");
     setIsLoading(false);
 
-    setCurrentRaised(prev => prev + totalAmount);
+    // Add the KES equivalent to the raised amount
+    setCurrentRaisedKES(prev => prev + amountInKES);
     
-    setMessage("✅ Asante sana! Your donation has been confirmed.");
+    setMessage("✅ Thank you so much! Your donation has been confirmed.");
     setTimeout(() => {
       setIsOpen(false);
       setMessage('');
@@ -89,21 +94,21 @@ export default function BuyMeACoffee() {
     initializePayment({ onSuccess, onClose });
   };
   
-  // --- NEW: Handler for the editable amount input ---
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    setTotalAmount(isNaN(value) ? 0 : value);
+    const value = parseInt(e.target.value.replace(/,/g, ''), 10);
+    setAmountUSD(isNaN(value) ? 0 : value);
   };
 
-  // Calculate the progress percentage for the progress bar
-  const percentage = Math.min(100, (currentRaised / goalAmount) * 100).toFixed(2);
+  // --- PROGRESS BAR CALCULATIONS in USD ---
+  const currentRaisedUSD = currentRaisedKES / USD_TO_KES_RATE;
+  const percentage = Math.min(100, (currentRaisedUSD / goalAmountUSD) * 100).toFixed(2);
 
   // Render the initial button if the modal is closed
   if (!isOpen) {
     return (
       <button onClick={() => setIsOpen(true)} className="fixed bottom-5 right-5 bg-yellow-400 text-gray-800 font-bold py-3 px-5 rounded-full shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 flex items-center z-40">
         <CoffeeIcon />
-        Support my work
+        Support my Work
       </button>
     );
   }
@@ -117,11 +122,11 @@ export default function BuyMeACoffee() {
             <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800 text-2xl" disabled={isLoading}>×</button>
         </div>
         
-        {/* Progress Bar */}
+        {/* Progress Bar (Displaying in USD) */}
         <div className="mb-6">
             <div className="flex justify-between items-end mb-1 text-sm font-medium text-gray-700">
-            <span className="text-gray-500">Status</span>
-                <span className="text-gray-500">Goal</span>
+                <span className="text-gray-500">Raised: ${Math.round(currentRaisedUSD).toLocaleString('en-US')}</span>
+                <span className="text-gray-500">Goal: ${goalAmountUSD.toLocaleString('en-US')}</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-4">
                 {isLoadingProgress ? (
@@ -137,19 +142,18 @@ export default function BuyMeACoffee() {
             </div>
         </div>
 
-        <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee). Asante sana!</p>
+        <p className="text-gray-600 mb-6">Every contribution helps fuel this creative work. Thank you!</p>
         
-        {/* --- UPDATED: Donation Amount Input --- */}
+        {/* Donation Amount Input (in USD) */}
         <div className="bg-gray-100 p-4 rounded-lg mb-6">
             <label htmlFor="donation-amount" className="block text-lg font-medium text-gray-700 mb-2 text-center">I'd like to support with:</label>
             <div className="flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-500 mr-2">KES</span>
+              <span className="text-2xl font-bold text-gray-500 mr-2">$</span>
               <input 
-                type="number"
+                type="text" // Use text to allow for commas, but handle parsing
                 id="donation-amount"
-                value={totalAmount}
+                value={amountUSD.toLocaleString('en-US')} // Display with commas
                 onChange={handleAmountChange}
-                placeholder="2000"
                 className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-2xl font-extrabold text-indigo-600 text-center"
                 disabled={isLoading}
               />
@@ -160,14 +164,14 @@ export default function BuyMeACoffee() {
         <form onSubmit={handlePaystackSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Edward" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
+            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Jane Doe" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email Address</label>
             <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
-          <button type="submit" disabled={isLoading || totalAmount < 100} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
-            {isLoading ? <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div> : `Support with KES ${totalAmount}`}
+          <button type="submit" disabled={isLoading || amountUSD < 1} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
+            {isLoading ? <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div> : `Support with $${amountUSD.toLocaleString('en-US')}`}
           </button>
         </form>
         {message && <p className={`mt-4 text-center text-sm font-medium ${message.includes('Error') ? 'text-red-600' : 'text-green-600'}`}>{message}</p>}
