@@ -15,20 +15,20 @@ export default function References() {
 const reference = [
   {
     name: 'Mr Brian.',
-    position: t('Driving Instructor, Digital Driving School'),
-    text: t('I can now reach out to more clients efficiently through the digital driving session booking site that Krinzie Dev is working on aiming at making scheduling of sessions smooth and stress-free for both instructors and learners. I’m thankful for the great partnership.'),
+    position: ('Driving Instructor, Digital Driving School'),
+    text: ('I can now reach out to more clients efficiently through the digital driving session booking site that Krinzie Dev is working on aiming at making scheduling of sessions smooth and stress-free for both instructors and learners. I’m thankful for the great partnership.'),
     avatar: Client3,
   },
   {
     name: 'John Omollo',
-    position: t('Avenue Fashion , Finance and Sales Director'),
-    text: t('The developer built us a digital e-commerce shop that streamlined our sales and expanded our reach. Thank you for the opportunity to partner with you — it’s been a pleasure.'),
+    position: ('Avenue Fashion , Finance and Sales Director'),
+    text: ('The developer built us a digital e-commerce shop that streamlined our sales and expanded our reach. Thank you for the opportunity to partner with you — it’s been a pleasure.'),
     avatar: Client4,
   },
   {
     name: 'B.Kimani',
-    position: t('USG, KeMUN'),
-    text: t('Working with Mr Munene transformed how we handle diplomacy — the new digital systems brought clarity, speed, and structure. We’re incredibly grateful for the impact.'),
+    position: ('USG, KeMUN'),
+    text: ('Working with Mr Munene transformed how we handle diplomacy — the new digital systems brought clarity, speed, and structure. We’re incredibly grateful for the impact.'),
     avatar: Client1,
   }
 

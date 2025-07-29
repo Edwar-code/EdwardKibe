@@ -14,7 +14,7 @@ export default function BuyMeACoffee() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [totalAmount, setTotalAmount] = useState(200000); // Default donation amount
+  const [totalAmount, setTotalAmount] = useState(200,000); // Default donation amount
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   
