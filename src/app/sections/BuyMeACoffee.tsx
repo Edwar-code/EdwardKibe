@@ -73,7 +73,8 @@ export default function BuyMeACoffee() {
     // Add the KES equivalent to the raised amount
     setCurrentRaisedKES(prev => prev + amountInKES);
     
-    setMessage("✅ Thank you so much! Your donation has been confirmed.");
+    // --- RESTORED ORIGINAL SUCCESS MESSAGE ---
+    setMessage("✅ Asante sana! Your donation has been confirmed.");
     setTimeout(() => {
       setIsOpen(false);
       setMessage('');
@@ -108,7 +109,7 @@ export default function BuyMeACoffee() {
     return (
       <button onClick={() => setIsOpen(true)} className="fixed bottom-5 right-5 bg-yellow-400 text-gray-800 font-bold py-3 px-5 rounded-full shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 flex items-center z-40">
         <CoffeeIcon />
-        Support my Work
+        Support my work
       </button>
     );
   }
@@ -124,9 +125,10 @@ export default function BuyMeACoffee() {
         
         {/* Progress Bar (Displaying in USD) */}
         <div className="mb-6">
+            {/* --- RESTORED ORIGINAL TEXT LABELS --- */}
             <div className="flex justify-between items-end mb-1 text-sm font-medium text-gray-700">
-                <span className="text-gray-500">Raised: ${Math.round(currentRaisedUSD).toLocaleString('en-US')}</span>
-                <span className="text-gray-500">Goal: ${goalAmountUSD.toLocaleString('en-US')}</span>
+                <span className="text-gray-500">Status</span>
+                <span className="text-gray-500">Goal</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-4">
                 {isLoadingProgress ? (
@@ -141,8 +143,9 @@ export default function BuyMeACoffee() {
                 )}
             </div>
         </div>
-
-        <p className="text-gray-600 mb-6">Every contribution helps fuel this creative work. Thank you!</p>
+        
+        {/* --- RESTORED ORIGINAL PARAGRAPH TEXT --- */}
+        <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee). Asante sana!</p>
         
         {/* Donation Amount Input (in USD) */}
         <div className="bg-gray-100 p-4 rounded-lg mb-6">
@@ -164,10 +167,11 @@ export default function BuyMeACoffee() {
         <form onSubmit={handlePaystackSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Jane Doe" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
+            {/* --- RESTORED ORIGINAL NAME PLACEHOLDER --- */}
+            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g., Edward" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email Address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
             <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <button type="submit" disabled={isLoading || amountUSD < 1} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
