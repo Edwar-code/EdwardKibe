@@ -14,14 +14,14 @@ export default function BuyMeACoffee() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [totalAmount, setTotalAmount] = useState(500);
+  const [totalAmount, setTotalAmount] = useState(500); // Default donation amount
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   
   // State for the progress bar
   const [currentRaised, setCurrentRaised] = useState(0);
   const [isLoadingProgress, setIsLoadingProgress] = useState(true);
-  const goalAmount = 210000;
+  const goalAmount = 200000; // --- GOAL AMOUNT UPDATED ---
 
   // Effect to fetch the real total from the database when the component opens
   useEffect(() => {
@@ -88,11 +88,13 @@ export default function BuyMeACoffee() {
     setMessage('');
     initializePayment({ onSuccess, onClose });
   };
-
-  // Helper functions to increase/decrease the donation amount
-  const handleDecrease = () => setTotalAmount(prev => Math.max(500, prev - 100));
-  const handleIncrease = () => setTotalAmount(prev => prev + 100); // <-- THIS LINE IS NOW FIXED
   
+  // --- NEW: Handler for the editable amount input ---
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setTotalAmount(isNaN(value) ? 0 : value);
+  };
+
   // Calculate the progress percentage for the progress bar
   const percentage = Math.min(100, (currentRaised / goalAmount) * 100).toFixed(2);
 
@@ -137,14 +139,20 @@ export default function BuyMeACoffee() {
 
         <p className="text-gray-600 mb-6">For the love of creating (and the need for coffee). Asante sana!</p>
         
-        {/* Donation Amount Selector */}
-        <div className="bg-gray-100 p-4 rounded-lg mb-6 text-center">
-            <p className="text-lg font-medium text-gray-700">You're Supporting:</p>
-            <p className="text-4xl font-extrabold text-indigo-600">KES {totalAmount}</p>
-            <div className="flex justify-center items-center gap-2 mt-3">
-                <button type="button" onClick={handleDecrease} className="px-3 py-1 bg-gray-200 rounded-md" disabled={isLoading}>-</button>
-                <span className="text-lg w-16 text-center">KES {totalAmount}</span>
-                <button type="button" onClick={handleIncrease} className="px-3 py-1 bg-gray-200 rounded-md" disabled={isLoading}>+</button>
+        {/* --- UPDATED: Donation Amount Input --- */}
+        <div className="bg-gray-100 p-4 rounded-lg mb-6">
+            <label htmlFor="donation-amount" className="block text-lg font-medium text-gray-700 mb-2 text-center">I'd like to support with:</label>
+            <div className="flex items-center justify-center">
+              <span className="text-2xl font-bold text-gray-500 mr-2">KES</span>
+              <input 
+                type="number"
+                id="donation-amount"
+                value={totalAmount}
+                onChange={handleAmountChange}
+                placeholder="2000"
+                className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-2xl font-extrabold text-indigo-600 text-center"
+                disabled={isLoading}
+              />
             </div>
         </div>
         
@@ -158,7 +166,7 @@ export default function BuyMeACoffee() {
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email Address</label>
             <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
-          <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
+          <button type="submit" disabled={isLoading || totalAmount < 100} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed flex justify-center items-center">
             {isLoading ? <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div> : `Support with KES ${totalAmount}`}
           </button>
         </form>
