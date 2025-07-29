@@ -20,7 +20,7 @@ function Projects() {
     {
       year: '2024',
       title: 'Avenue Fashion',
-      type: t('Project.Avenue Fashion.type'),
+      type: t('Avenue Fashion'),
       result: [
         { title: t('Shop at AvenueFashion by Krinzie Dev') },
      
@@ -33,7 +33,7 @@ function Projects() {
     {
       year: '2025',
       title: 'Learners Ride',
-      type: t('Project.Learners Ride.type'),
+      type: t('Learners Ride'),
       result: [
         { title: t('Learners Ride Technologies by Krinzie Dev') },
      
@@ -46,7 +46,7 @@ function Projects() {
     {
       year: '2025',
       title: 'KeMUN Connect',
-      type: t('Project.KeMUN Connect.type'),
+      type: t('KeMUN Connect'),
       result: [
         { title: t('KeMUN Connect by Krinzie Dev ') },
     
@@ -60,7 +60,7 @@ function Projects() {
         {
           year: '2025', // <-- CHANGE THIS TO THE CORRECT YEAR
           title: 'Watch',
-          type: t('Project.Watch.type'), // You will need to add this translation
+          type: t('Watch'), // You will need to add this translation
           result: [
             { title: t(' Lets Watch') }, // You will need to add this translation
          
