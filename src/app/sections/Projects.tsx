@@ -3,7 +3,7 @@ import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
-import projectImageCapture from '@/src/assets/Capture.PNG'
+import projectImageCapture from '@/src/assets/Capture.PNG' // <--- Corrected import for CeejayFX image
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -37,9 +37,7 @@ function Projects() {
       ],
       link: 'https://ceejay-seven.vercel.app/',
       githublink: 'https://github.com/Edwar-code',
-      // The image source is already a direct URL string here.
-      // The issue is likely with Next.js image configuration, not this line.
-      image: projectImageCapture,
+      image: projectImageCapture, // <--- Now using the locally imported image
       ariaLabel: 'CeejayFX - Forex Trading Platform',
     },
     {
@@ -101,7 +99,16 @@ function Projects() {
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-orange-400 dark:from-emerald-300 to-amber-300 dark:to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text text-shadow dark:text-shadow-none">
+                  {/* Conditional classes for project type color */}
+                  <div
+                    className={`inline-flex gap-2 font-bold uppercase tracking-widest text-sm ${
+                      project.type === t('Project Complete')
+                        ? 'text-green-500 dark:text-green-400' // Green for completed projects
+                        : project.type === t('In Progress')
+                        ? 'text-orange-500 dark:text-orange-400' // Orange for in progress projects
+                        : 'text-gray-500 dark:text-gray-400' // Default if neither
+                    }`}
+                  >
                     <span>{project.type}</span>
                     <span>•</span>
                     <span>{project.year}</span>
