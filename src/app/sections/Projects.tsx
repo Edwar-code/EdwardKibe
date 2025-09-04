@@ -3,8 +3,8 @@ import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
-
-import projectImagep from '@/src/assets/p.png' // <--- Corrected import for CeejayFX image
+// Assuming 'p.png' is also in src/assets/ and you've imported it like this:
+import projectImagep from '@/src/assets/p.png' // <--- New import for p.png
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -38,8 +38,8 @@ function Projects() {
       ],
       link: 'https://ceejay-seven.vercel.app/',
       githublink: 'https://github.com/Edwar-code',
-      image: projectImagep // <--- Now using the locally imported image
-      ariaLabel: 'CeejayFX - Portfolio for a Forex Trader',
+      image: projectImagep, // <--- Now using the imported 'p.png'
+      ariaLabel: 'CeejayFX - Forex Trading Platform', // <--- Added missing comma here!
     },
     {
       year: '2025',
