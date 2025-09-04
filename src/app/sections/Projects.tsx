@@ -18,7 +18,7 @@ function Projects() {
     {
       year: '2024',
       title: 'Avenue Fashion',
-      type: t('Avenue Fashion'),
+      type: t('Project Complete'),
       result: [
         { title: t('Shop at AvenueFashion by Krinzie Dev') },
       ],
@@ -28,21 +28,23 @@ function Projects() {
       ariaLabel: 'Avenue Fashion by Krinzie Dev',
     },
     {
-      year: '2024', // Assuming current year for a new project
+      year: '2024',
       title: 'CeejayFX',
-      type: t('CeejayFX'), // You will need to add this translation
+      type: t('Project Complete'),
       result: [
-        { title: t('CeejayFX - Forex Trading') }, // You will need to add this translation
+        { title: t('CeejayFX - Forex Trading') },
       ],
       link: 'https://ceejay-seven.vercel.app/',
-      githublink: 'https://github.com/Edwar-code', // Update with actual GitHub link if available
-      image: 'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Capture.PNG', // Direct URL for the image
+      githublink: 'https://github.com/Edwar-code',
+      // The image source is already a direct URL string here.
+      // The issue is likely with Next.js image configuration, not this line.
+      image: 'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Capture.PNG',
       ariaLabel: 'CeejayFX - Forex Trading Platform',
     },
     {
       year: '2025',
       title: 'Learners Ride',
-      type: t('Learners Ride'),
+      type: t('In Progress'),
       result: [
         { title: t('Learners Ride Technologies by Krinzie Dev') },
       ],
@@ -54,7 +56,7 @@ function Projects() {
     {
       year: '2025',
       title: 'KeMUN Connect',
-      type: t('KeMUN Connect'),
+      type: t('Project Complete'),
       result: [
         { title: t('KeMUN Connect by Krinzie Dev ') },
       ],
@@ -66,7 +68,7 @@ function Projects() {
     {
       year: '2025',
       title: 'Watch',
-      type: t('Watch'),
+      type: t('In Progress'),
       result: [
         { title: t(' Lets Watch') },
       ],
@@ -75,21 +77,6 @@ function Projects() {
       image: projectImageWatch,
       ariaLabel: 'Watch - Lets Watch',
     },
-    // {
-    //   year: 'YEAR',
-    //   title: 'Project',
-    //   type: t('Project.comingSoonTitle'),
-
-    //   result: [
-    //     { title: t('Project.comingSoon') },
-    //     { title: t('Project.comingSoon') },
-    //     { title: t('Project.comingSoon') },
-    //   ],
-    //   link: 'https://www.google.com',
-    //   githublink: 'https://github.com/MosesLevin/',
-    //   image: project1Placeholder,
-    //   ariaLabel: 'Project GitHub Repository',
-    // },
   ]
 
   return (
@@ -104,30 +91,24 @@ function Projects() {
         {/* CARDS FOR PROJECTS */}
         <div className="flex flex-col mt-10 md:mt-20 gap-20 ">
           {portfolioProject.map((project, projectIndex) => (
-            // adding sticky class to Card with top-value so when it gets to top-value it will stick, adding "style" prop for sticky gap between cards
             <Card
               key={project.title}
               className=" px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-16 "
-              // style to calc "card stacking" distance from previos card on scroll down
               style={{
                 top: `calc(64px + ${projectIndex * 50}px)`,
               }}
             >
-              {/* grid for lg view */}
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  {/*!!! div to hold gradient, project title line and secondary info all to be changed!!!*/}
                   <div className="bg-gradient-to-r from-orange-400 dark:from-emerald-300 to-amber-300 dark:to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text text-shadow dark:text-shadow-none">
                     <span>{project.type}</span>
                     <span>•</span>
                     <span>{project.year}</span>
                   </div>
-                  {/* project */}
                   <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5 dark:text-white text-black ">
                     {project.title}
                   </h3>
                   <hr className="border-t-2 dark:border-white/5 border-black/5 mt-4 md:mt-5" />
-                  {/* map over objects nested array for more info */}
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.result.map((result) => (
                       <li
