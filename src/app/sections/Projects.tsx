@@ -3,7 +3,8 @@ import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
-import projectImageCapture from '@/src/assets/Capture.png' // <--- Corrected import for CeejayFX image
+
+import projectImagep from '@/src/assets/p.png' // <--- Corrected import for CeejayFX image
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -37,8 +38,8 @@ function Projects() {
       ],
       link: 'https://ceejay-seven.vercel.app/',
       githublink: 'https://github.com/Edwar-code',
-      image: projectImageCapture, // <--- Now using the locally imported image
-      ariaLabel: 'CeejayFX - Forex Trading Platform',
+      image: projectImagep // <--- Now using the locally imported image
+      ariaLabel: 'CeejayFX - Portfolio for a Forex Trader',
     },
     {
       year: '2025',
