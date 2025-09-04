@@ -3,6 +3,7 @@ import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
+import projectImageCapture from '@/src/assets/Capture.PNG'
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -38,7 +39,7 @@ function Projects() {
       githublink: 'https://github.com/Edwar-code',
       // The image source is already a direct URL string here.
       // The issue is likely with Next.js image configuration, not this line.
-      image: 'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Capture.PNG',
+      image: projectImageCapture,
       ariaLabel: 'CeejayFX - Forex Trading Platform',
     },
     {
