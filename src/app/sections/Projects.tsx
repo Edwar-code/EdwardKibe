@@ -1,4 +1,4 @@
-import projectImageWatch from '@/src/assets/watch.png'; // <--- ADD THIS LINE
+import projectImageWatch from '@/src/assets/watch.png';
 import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
@@ -15,15 +15,12 @@ function Projects() {
   const t = useTranslations('Projects')
 
   const portfolioProject = [
-
-    // --- END: NEW PROJECT ---
     {
       year: '2024',
       title: 'Avenue Fashion',
       type: t('Avenue Fashion'),
       result: [
         { title: t('Shop at AvenueFashion by Krinzie Dev') },
-     
       ],
       link: 'https://AvenueFashion.co.ke/',
       githublink: 'https://github.com/Edwar-code',
@@ -31,12 +28,23 @@ function Projects() {
       ariaLabel: 'Avenue Fashion by Krinzie Dev',
     },
     {
+      year: '2024', // Assuming current year for a new project
+      title: 'CeejayFX',
+      type: t('CeejayFX'), // You will need to add this translation
+      result: [
+        { title: t('CeejayFX - Forex Trading') }, // You will need to add this translation
+      ],
+      link: 'https://ceejay-seven.vercel.app/',
+      githublink: 'https://github.com/Edwar-code', // Update with actual GitHub link if available
+      image: 'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Capture.PNG', // Direct URL for the image
+      ariaLabel: 'CeejayFX - Forex Trading Platform',
+    },
+    {
       year: '2025',
       title: 'Learners Ride',
       type: t('Learners Ride'),
       result: [
         { title: t('Learners Ride Technologies by Krinzie Dev') },
-     
       ],
       link: 'https://learners-ride.vercel.app/',
       githublink: 'https://github.com/Edwar-code',
@@ -49,27 +57,24 @@ function Projects() {
       type: t('KeMUN Connect'),
       result: [
         { title: t('KeMUN Connect by Krinzie Dev ') },
-    
       ],
       link: 'https://kemun.co.ke',
       githublink: 'https://github.com/Edwar-code',
       image: projectImageTarbutGan,
       ariaLabel: ' Diplomacy meets at KeMUN Connect ',
     },
-        // --- START: NEW PROJECT ADDED HERE ---
-        {
-          year: '2025', // <-- CHANGE THIS TO THE CORRECT YEAR
-          title: 'Watch',
-          type: t('Watch'), // You will need to add this translation
-          result: [
-            { title: t(' Lets Watch') }, // You will need to add this translation
-         
-          ],
-          link: 'https://watch-1ikt.vercel.app/', // <-- CHANGE THIS
-          githublink: 'https://github.com/your-repo-link', // <-- CHANGE THIS
-          image: projectImageWatch,
-          ariaLabel: 'Watch -  Lets Watch',
-        },
+    {
+      year: '2025',
+      title: 'Watch',
+      type: t('Watch'),
+      result: [
+        { title: t(' Lets Watch') },
+      ],
+      link: 'https://watch-1ikt.vercel.app/',
+      githublink: 'https://github.com/your-repo-link',
+      image: projectImageWatch,
+      ariaLabel: 'Watch - Lets Watch',
+    },
     // {
     //   year: 'YEAR',
     //   title: 'Project',
@@ -94,7 +99,6 @@ function Projects() {
           eyebrow={t('header')}
           title={t('title')}
           description={t('description')}
-          //DE "description": "Schauen Sie Konzepte die ich in innovative digitale Erlebnisse umgesetzt habe",
         />
 
         {/* CARDS FOR PROJECTS */}
