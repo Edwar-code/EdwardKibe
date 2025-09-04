@@ -3,7 +3,7 @@ import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
-import projectImageCapture from '@/src/assets/Capture.PNG' // <--- Corrected import for CeejayFX image
+import projectImageCapture from '@/src/assets/Capture.png' // <--- Corrected import for CeejayFX image
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
