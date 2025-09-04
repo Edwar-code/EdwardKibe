@@ -18,7 +18,7 @@ function Projects() {
 
   const portfolioProject = [
     {
-      year: '2024',
+      year: '2025',
       title: 'Avenue Fashion',
       type: t('Project Complete'),
       result: [
@@ -30,7 +30,7 @@ function Projects() {
       ariaLabel: 'Avenue Fashion by Krinzie Dev',
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'CeejayFX',
       type: t('Project Complete'),
       result: [
