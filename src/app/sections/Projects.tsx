@@ -14,13 +14,13 @@ import GithubIcon from '@/src/assets/icons/github.svg'
 import { useTranslations } from 'next-intl'
 
 function Projects() {
-  const t = useTranslations('Projects')
+  const t = useTranslations('Project')
 
   const portfolioProject = [
     {
       year: '2025',
       title: 'Avenue Fashion',
-      type: t('Project Complete'),
+      type: t(' Complete'),
       result: [
         { title: t('Shop at AvenueFashion by Krinzie Dev') },
       ],
@@ -32,7 +32,7 @@ function Projects() {
     {
       year: '2025',
       title: 'CeejayFX',
-      type: t('Project Complete'),
+      type: t(' Complete'),
       result: [
         { title: t('CeejayFX - Forex Trading') },
       ],
@@ -56,7 +56,7 @@ function Projects() {
     {
       year: '2025',
       title: 'KeMUN Connect',
-      type: t('Project Complete'),
+      type: t('Complete'),
       result: [
         { title: t('KeMUN Connect by Krinzie Dev ') },
       ],
@@ -80,7 +80,7 @@ function Projects() {
   ]
 
   return (
-    <section id="projects" className="pb--16 lg:py-24">
+    <section id="project" className="pb--16 lg:py-24">
       <div className="container">
         <SectionHeader
           eyebrow={t('header')}
