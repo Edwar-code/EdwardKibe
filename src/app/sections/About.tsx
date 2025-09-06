@@ -115,8 +115,8 @@ export default function About() {
     <section id="about" className="pt-20 lg:py-28 ">
       <div className="container">
         <SectionHeader
-          eyebrow={t('sectionHeader.header')}
-          title={t('sectionHeader.title')}
+          eyebrow={t('')}
+          title={t('')}
           description={t('sectionHeader.description')}
         />
         <div className="mt-20 flex flex-col gap-8">
