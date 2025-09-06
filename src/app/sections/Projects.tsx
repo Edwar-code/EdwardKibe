@@ -83,9 +83,9 @@ function Projects() {
     <section id="project" className="pb--16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow={t('header')}
-          title={t('title')}
-          description={t('description')}
+          eyebrow={t('Latest')}
+          title={t('FEATURED PROJECTS')}
+          description={t('Breathing Ideas')}
         />
 
         {/* CARDS FOR PROJECTS */}
