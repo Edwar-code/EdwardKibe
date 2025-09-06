@@ -14,13 +14,13 @@ import GithubIcon from '@/src/assets/icons/github.svg'
 import { useTranslations } from 'next-intl'
 
 function Projects() {
-  const t = useTranslations('Project')
+  const t = useTranslations('')
 
   const portfolioProject = [
     {
       year: '2025',
       title: 'Avenue Fashion',
-      type: t(' Complete'),
+      type: t(' Project Complete'),
       result: [
         { title: t('Shop at AvenueFashion by Krinzie Dev') },
       ],
@@ -32,7 +32,7 @@ function Projects() {
     {
       year: '2025',
       title: 'CeejayFX',
-      type: t(' Complete'),
+      type: t(' Project Complete'),
       result: [
         { title: t('CeejayFX - Forex Trading') },
       ],
@@ -44,7 +44,7 @@ function Projects() {
     {
       year: '2025',
       title: 'Learners Ride',
-      type: t('In Progress'),
+      type: t('Project In Progress'),
       result: [
         { title: t('Learners Ride Technologies by Krinzie Dev') },
       ],
@@ -56,7 +56,7 @@ function Projects() {
     {
       year: '2025',
       title: 'KeMUN Connect',
-      type: t('Complete'),
+      type: t('Project Complete'),
       result: [
         { title: t('KeMUN Connect by Krinzie Dev ') },
       ],
@@ -68,7 +68,7 @@ function Projects() {
     {
       year: '2025',
       title: 'Watch',
-      type: t('In Progress'),
+      type: t('Project In Progress'),
       result: [
         { title: t(' Lets Watch') },
       ],
