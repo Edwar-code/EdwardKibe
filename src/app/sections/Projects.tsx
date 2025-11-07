@@ -29,18 +29,7 @@ function Projects() {
       image: projectImageNeueTraditionen,
       ariaLabel: 'Avenue Fashion by Krinzie Dev',
     },
-    {
-      year: '2025',
-      title: 'CeejayFX',
-      type: t(' Project Complete'),
-      result: [
-        { title: t('CeejayFX - Forex Trading') },
-      ],
-      link: 'https://ceejay-seven.vercel.app/',
-      githublink: 'https://github.com/Edwar-code',
-      image: projectImagep, // <--- Now using the imported 'p.png'
-      ariaLabel: 'CeejayFX - Forex Trading Platform', // <--- Added missing comma here!
-    },
+   
     {
       year: '2025',
       title: 'Learners Ride',
