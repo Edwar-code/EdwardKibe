@@ -5,12 +5,14 @@
     "about": "À propos",
     "contact": "Contact"
   },
-  "Homepage": {
-    "availability": "Disponible pour de nouveaux projets",
-    "title": "Edward Kibe Munene (Développeur à temps partiel)",
-    "description": "Toujours au Kenya, je me spécialise dans la transformation d'idées et de conceptions en applications web modernes et de haute qualité pour des clients dans le monde entier",
-    "buttonExplore": "Mes réalisations",
-    "buttonContact": "Dites Bonjour!"
+"Homepage": {
+  "availability": "Disponible pour de nouveaux projets",
+  "title": "Edward Kibe Munene (Étudiant en RI & Développeur)",
+  "description": "Basé au Kenya, je suis étudiant en relations internationales et développeur. Je me spécialise dans la transformation d'idées et de concepts en applications web modernes et performantes pour des clients du monde entier — car pour moi, il ne s'agit pas seulement de technologie, mais de créer des connexions à l'échelle mondiale.",
+  "buttonExplore": "Mes réalisations",
+  "buttonContact": "Dites Bonjour!",
+  "buttonViewCV": "Voir le CV"
+
   },
   "Projects": {
     "header": "PDG, Krinzie Devs",
