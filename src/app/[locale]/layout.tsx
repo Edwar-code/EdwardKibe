@@ -44,13 +44,13 @@ interface WebsiteMetadata {
 }
 
 export const metadata: WebsiteMetadata = {
-  title: 'Edward Kibe- Web Developer',
+  title: 'Edward Kibe- IR and IT Specialist',
   description:
     "Explore Edward Kibe- Web development Projects, showcasing React/Javascript Skills Design Expertise. Get in touch with me.",
 
   openGraph: {
     url: 'https://edward-kibe.vercel.app/en',
-    title: 'Edward Kibe- Web Developer',
+    title: 'Edward Kibe- IR and IT Specialist',
     description: 'A showcase of my web development projects and expertise',
     images: [
       {
@@ -90,7 +90,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <Head>
-        <title>Edward Kibe- Web Developer</title>
+        <title>Edward Kibe- IR and IT Specialist</title>
         <meta
           // This meta tag provides a brief description for search engines and browser tab previews.
           name="description"
@@ -109,7 +109,7 @@ export default async function RootLayout({
               'https://github.com/MosesLevin',
               // 'https://twitter.com/yourtwitterhandle',
             ],
-            jobTitle: 'Web Developer',
+            jobTitle: 'IR and IT Specialist',
             worksFor: { '@type': 'Organization', name: 'Your Company' },
             alumniOf: {
               '@type': 'University',
