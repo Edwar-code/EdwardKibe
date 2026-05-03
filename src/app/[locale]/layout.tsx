@@ -117,7 +117,7 @@ export default async function RootLayout({
             },
             // This field in your structured data describes your portfolio for Google to generate rich snippets.
             description:
-              'A showcase of my Web Development projects and Skills. Bringing Websites to Life.',
+              'A showcase of my Web Development projects and Skills. Bringing Websites 2 Life.',
             image:
               'https://https://edward-kibe.vercel.app/en/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMoComputerMemoji.8d87ca22.png&w=750&q=75',
           })}
