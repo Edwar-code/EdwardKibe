@@ -5,13 +5,13 @@
     "about": "About",
     "contact": "Contact"
   },
-"Homepage": {
-  "availability": "Available for new projects",
-  "title": "Edward Kibe Munene ( UX Developer & IR Graduant)",
-  "description": "Based in Kenya, I am a Full time UX developer and a International Relations Graduant. I specialize in transforming ideas and designs into modern, high-quality web applications for clients worldwide—because for me, it's not just about tech, it's about global connection.",
-  "buttonExplore": "My Works",
-  "buttonContact": "Say Hi!",
-  "buttonViewCV": "View CV"
+  "Homepage": {
+    "availability": "Available for new projects",
+    "title": "Edward Kibe Munene ( UX Developer & IR Graduant)",
+    "description": "Based in Kenya, I am a Full time UX developer and a International Relations Graduant. I specialize in transforming ideas and designs into modern, high-quality web applications for clients worldwide—because for me, it's not just about tech, it's about global connection.",
+    "buttonExplore": "My Works",
+    "buttonContact": "Say Hi!",
+    "buttonViewCV": "View CV"
   },
   "Projects": {
     "header": " Krinzie Devs",
@@ -79,7 +79,6 @@
       "title": "Education",
       "description": "Pursuing Bachelor of Arts in International Relations at Kenya Methodist University."
     },
-
     "books": {
       "booksHeader": {
         "title": "Literature",
@@ -95,11 +94,11 @@
       "gaming": "Gaming",
       "reading": "Reading",
       "cooking": "Cooking",
-      "traveling": "Traveling"
-         "swimming": "swimming",
+      "traveling": "Traveling",
+      "swimming": "swimming",
       "diplomacy": "diplomacy",
-      "hiking": "hiking",
-          },
+      "hiking": "hiking"
+    },
     "toolboxCard": {
       "title": "My Toolbox",
       "description": "The technologies and tools I use to bring Websites & Apps to life"
