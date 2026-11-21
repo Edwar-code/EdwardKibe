@@ -4,6 +4,8 @@ import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
 import projectImagep from '@/src/assets/p.png'
+import projectImageNyotaImara from '@/src/assets/nyotaimara.png'
+import projectImageZeni from '@/src/assets/zeni.png'
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -39,8 +41,7 @@ function Projects() {
       ],
       link: 'https://nyotaimara.com/',
       githublink: 'https://github.com/Edwar-code',
-      image:
-        'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Screenshot%202026-11-21%20212108.png',
+      image: projectImageNyotaImara,
       ariaLabel: 'Nyota Imara — B2B Cloud & Identity Infrastructure',
     },
     {
@@ -56,8 +57,7 @@ function Projects() {
       ],
       link: 'https://www.zeni.co.ke/',
       githublink: 'https://github.com/Edwar-code',
-      image:
-        'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Screenshot%202026-11-21%20212208.png',
+      image: projectImageZeni,
       ariaLabel: 'Zeni — Digital Chama Management Platform',
     },
     {
@@ -171,8 +171,6 @@ function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={typeof project.image === 'string' ? 1200 : undefined}
-                    height={typeof project.image === 'string' ? 750 : undefined}
                     className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   />
                 </div>
