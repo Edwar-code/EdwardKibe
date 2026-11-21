@@ -1,10 +1,9 @@
-import projectImageWatch from '@/src/assets/watch.png';
+import projectImageWatch from '@/src/assets/watch.png'
 import project1Placeholder from '@/src/assets/BuildingProjectsImg.png'
 import projectImagePortfolio from '@/src/assets/Moses Portfolio website.png'
 import projectImageNeueTraditionen from '@/src/assets/Neue Traditionen website.png'
 import projectImageTarbutGan from '@/src/assets/TarbutGan.png'
-// Assuming 'p.png' is also in src/assets/ and you've imported it like this:
-import projectImagep from '@/src/assets/p.png' // <--- New import for p.png
+import projectImagep from '@/src/assets/p.png'
 import Image from 'next/image'
 import CheckmarkIcon from '@/src/assets/icons/checkmark.svg'
 import ArrowDiagonal from '@/src/assets/icons/arrow-diag.svg'
@@ -20,47 +19,72 @@ function Projects() {
     {
       year: '2025',
       title: 'Avenue Fashion',
-      type: t(' Project Complete'),
-      result: [
-        { title: t('Shop at AvenueFashion by Krinzie Dev') },
-      ],
+      type: t('Project Complete'),
+      result: [{ title: t('Shop at AvenueFashion by Krinzie Dev') }],
       link: 'https://AvenueFashion.co.ke/',
       githublink: 'https://github.com/Edwar-code',
       image: projectImageNeueTraditionen,
       ariaLabel: 'Avenue Fashion by Krinzie Dev',
     },
-   
     {
-      year: '2025',
+      year: '2026',
+      title: 'Nyota Imara',
+      type: t('Project Complete'),
+      result: [
+        {
+          title: t(
+            'B2B Cloud, Identity (KYC/KYB), Storage & SMS Infrastructure Platform'
+          ),
+        },
+      ],
+      link: 'https://nyotaimara.com/',
+      githublink: 'https://github.com/Edwar-code',
+      image:
+        'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Screenshot%202026-11-21%20212108.png',
+      ariaLabel: 'Nyota Imara — B2B Cloud & Identity Infrastructure',
+    },
+    {
+      year: '2026',
+      title: 'Zeni',
+      type: t('Project Complete'),
+      result: [
+        {
+          title: t(
+            'Digital Chama, Group Savings & Investment Platform for Africa'
+          ),
+        },
+      ],
+      link: 'https://www.zeni.co.ke/',
+      githublink: 'https://github.com/Edwar-code',
+      image:
+        'https://on98bvtkqbnonyxs.public.blob.vercel-storage.com/Screenshot%202026-11-21%20212208.png',
+      ariaLabel: 'Zeni — Digital Chama Management Platform',
+    },
+    {
+      year: '2026',
       title: 'Learners Ride',
       type: t('Project In Progress'),
-      result: [
-        { title: t('Learners Ride Technologies by Krinzie Dev') },
-      ],
+      result: [{ title: t('Learners Ride Technologies by Krinzie Dev') }],
       link: 'https://learners-ride.vercel.app/',
       githublink: 'https://github.com/Edwar-code',
       image: projectImagePortfolio,
       ariaLabel: 'Learners Ride (Under Construction) by Krinzie Dev',
     },
     {
-      year: '2025',
+      year: '2026',
       title: 'KeMUN Connect',
-      type: t('Project Complete'),
-      result: [
-        { title: t('KeMUN Connect by Krinzie Dev ') },
-      ],
+      type: t('Project In Progress'),
+      result: [{ title: t('KeMUN Connect by Krinzie Dev') }],
       link: 'https://kemun.co.ke',
       githublink: 'https://github.com/Edwar-code',
       image: projectImageTarbutGan,
-      ariaLabel: ' Diplomacy meets at KeMUN Connect ',
+      ariaLabel: 'Diplomacy meets at KeMUN Connect',
     },
     {
-      year: '2025',
+      year: '2026',
       title: 'Watch',
       type: t('Project In Progress'),
-      result: [
-        { title: t(' Lets Watch') },
-      ],
+      result: [{ title: t('Lets Watch') }],
       link: 'https://watch-1ikt.vercel.app/',
       githublink: 'https://github.com/your-repo-link',
       image: projectImageWatch,
@@ -93,10 +117,10 @@ function Projects() {
                   <div
                     className={`inline-flex gap-2 font-bold uppercase tracking-widest text-sm ${
                       project.type === t('Project Complete')
-                        ? 'text-green-500 dark:text-green-400' // Green for completed projects
-                        : project.type === t('In Progress')
-                        ? 'text-orange-500 dark:text-orange-400' // Orange for in progress projects
-                        : 'text-gray-500 dark:text-gray-400' // Default if neither
+                        ? 'text-green-500 dark:text-green-400'
+                        : project.type === t('Project In Progress')
+                        ? 'text-orange-500 dark:text-orange-400'
+                        : 'text-gray-500 dark:text-gray-400'
                     }`}
                   >
                     <span>{project.type}</span>
@@ -119,7 +143,7 @@ function Projects() {
                     ))}
                   </ul>
                   <div className="flex">
-                    <a href={project.link} target="_blank">
+                    <a href={project.link} target="_blank" rel="noreferrer">
                       <button
                         className="dark:bg-white/90 bg-black/85 dark:text-gray-950 text-white/90 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 px-6 dark:hover:bg-white/95 hover:bg-black/90 dark:hover:text-black hover:text-white transition duration-[125ms] hover:ring-1 dark:hover:ring-white/50 hover:ring-black/50 button-animation hover:scale-100"
                         aria-label="Visit Live Website in new tab"
@@ -131,6 +155,7 @@ function Projects() {
                     <a
                       href={project.githublink}
                       target="_blank"
+                      rel="noreferrer"
                       aria-label={project.ariaLabel}
                     >
                       <button
@@ -146,6 +171,8 @@ function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
+                    width={typeof project.image === 'string' ? 1200 : undefined}
+                    height={typeof project.image === 'string' ? 750 : undefined}
                     className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   />
                 </div>
