@@ -69,7 +69,6 @@ const toolboxItems: interfaceToolboxItem[] = [
     title: 'Shopify',
     iconType: ShopifyIcon,
   },
-
 ]
 // hobbies - all could be in database if larger project
 
@@ -77,8 +76,6 @@ export default function About() {
   const constrainRef = useRef(null)
   const t = useTranslations('About')
   const hobbies = [
-
-    
     {
       title: t('hobbies.gaming'),
       emoji: '🎮',
@@ -91,7 +88,6 @@ export default function About() {
       left: '59%',
       top: '78%',
     },
-   
     {
       title: t('hobbies.cooking'),
       emoji: '🌮',
@@ -109,6 +105,18 @@ export default function About() {
       emoji: '✈️',
       left: '58%',
       top: '16%',
+    },
+    {
+      title: t('hobbies.swimming'),
+      emoji: '🏊',
+      left: '10%',
+      top: '46%',
+    },
+    {
+      title: t('hobbies.diplomacy'),
+      emoji: '🤝',
+      left: '54%',
+      top: '45%',
     },
   ]
   return (
