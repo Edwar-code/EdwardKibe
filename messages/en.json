@@ -8,7 +8,7 @@
 "Homepage": {
   "availability": "Available for new projects",
   "title": "Edward Kibe Munene (IR Student & Developer)",
-  "description": "Based in Kenya, I am an International Relations student and developer. I specialize in transforming ideas and designs into modern, high-quality web applications for clients worldwide—because for me, it's not just about tech, it's about global connection.",
+  "description": "Based in Kenya, I am a Full time UX developer and a International Relations Graduant. I specialize in transforming ideas and designs into modern, high-quality web applications for clients worldwide—because for me, it's not just about tech, it's about global connection.",
   "buttonExplore": "My Works",
   "buttonContact": "Say Hi!",
   "buttonViewCV": "View CV"
@@ -96,7 +96,10 @@
       "reading": "Reading",
       "cooking": "Cooking",
       "traveling": "Traveling"
-    },
+         "swimming": "swimming",
+      "diplomacy": "diplomacy",
+      "hiking": "hiking",
+          },
     "toolboxCard": {
       "title": "My Toolbox",
       "description": "The technologies and tools I use to bring Websites & Apps to life"
