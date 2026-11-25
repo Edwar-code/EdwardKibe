@@ -5,14 +5,27 @@
     "about": "À propos",
     "contact": "Contact"
   },
-"Homepage": {
-  "availability": "Disponible pour de nouveaux projets",
-  "title": "Edward Kibe Munene (Étudiant en RI & Développeur)",
-  "description": "Basé au Kenya, je suis étudiant en relations internationales et développeur. Je me spécialise dans la transformation d'idées et de concepts en applications web modernes et performantes pour des clients du monde entier — car pour moi, il ne s'agit pas seulement de technologie, mais de créer des connexions à l'échelle mondiale.",
-  "buttonExplore": "Mes réalisations",
-  "buttonContact": "Dites Bonjour!",
-  "buttonViewCV": "Voir le CV"
-
+  "Homepage": {
+    "availability": "Disponible pour de nouveaux projets",
+    "title": "Edward Kibe Munene (Étudiant en RI & Développeur)",
+    "description": "Basé au Kenya, je suis étudiant en relations internationales et développeur. Je me spécialise dans la transformation d'idées et de concepts en applications web modernes et performantes pour des clients du monde entier — car pour moi, il ne s'agit pas seulement de technologie, mais de créer des connexions à l'échelle mondiale.",
+    "buttonExplore": "Mes réalisations",
+    "buttonContact": "Dites Bonjour!",
+    "buttonViewCV": "Voir le CV"
+  },
+  "Promotion": {
+    "header": "Promotion à Durée Limitée",
+    "badge": "Campagne de 2 Semaines",
+    "title": "Indicateurs de Trading Personnalisés - Pour Recherche et Analyse",
+    "description": "Création d'indicateurs / algorithmes pour la recherche et l'analyse et correction de bugs pour seulement 35 $. Cette promotion restera valable un moment alors que je retrouve mes clients après mon absence.",
+    "price": "35 $",
+    "duration": "2 Semaines Seulement",
+    "features1": "Création d'Indicateur Personnalisé",
+    "features2": "Correction de Bugs pour Indicateurs Existants",
+    "features3": "Conçu pour la Recherche et l'Analyse",
+    "buttonClaim": "Profiter de l'Offre à 35 $",
+    "buttonContact": "Demander sur la Promotion",
+    "note": "Pour la recherche et l'analyse uniquement. Pas un conseil financier."
   },
   "Projects": {
     "header": "PDG, Krinzie Devs",
