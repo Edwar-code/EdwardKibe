@@ -7,24 +7,24 @@
   },
   "Homepage": {
     "availability": "Disponible pour de nouveaux projets",
-    "title": "Edward Kibe Munene (Étudiant en RI & Développeur)",
-    "description": "Basé au Kenya, je suis étudiant en relations internationales et développeur. Je me spécialise dans la transformation d'idées et de concepts en applications web modernes et performantes pour des clients du monde entier — car pour moi, il ne s'agit pas seulement de technologie, mais de créer des connexions à l'échelle mondiale.",
+    "title": "Edward Kibe Munene (Développeur UX & Diplômé en RI)",
+    "description": "Basé au Kenya, je suis développeur UX à temps plein et diplômé en relations internationales. Je me spécialise dans la transformation d'idées et de designs en applications web modernes et de haute qualité pour des clients du monde entier — car pour moi, il ne s'agit pas seulement de technologie, mais de connexion mondiale.",
     "buttonExplore": "Mes réalisations",
-    "buttonContact": "Dites Bonjour!",
+    "buttonContact": "Dites Bonjour !",
     "buttonViewCV": "Voir le CV"
   },
   "Promotion": {
     "header": "Promotion à Durée Limitée",
     "badge": "Campagne de 2 Semaines",
-    "title": "Indicateurs",
-    "description": "Création d'indicateurs / algorithmes pour la recherche et l'analyse et correction de bugs pour seulement 35 $.",
+    "title": "Débogage de Code et Création d'Indicateurs Personnalisés",
+    "description": "Pour seulement 35 $.",
     "price": "35 $",
     "duration": "2 Semaines Seulement",
-
-    "buttonClaim": "Profiter de l'Offre à 35 $",
+    "buttonContact": "Demander sur la Promotion",
+    "note": "Cette Promotion est Limitée pour une Durée Spécifique"
   },
   "Projects": {
-    "header": "PDG, Krinzie Devs",
+    "header": "Krinzie Devs",
     "title": "Projets phares",
     "description": "Je donne vie aux idées à travers des solutions numériques interactives",
     "Project": {
@@ -81,34 +81,33 @@
     "pinkHouseHostel": {
       "position": "Secrétariat local, KeMUN Connect",
       "recommendation": "\"Ed nous a impressionnés par sa créativité et sa compréhension des technologies web modernes. Son travail a considérablement amélioré l'utilisabilité de notre plateforme et a conduit à des résultats positifs...\""
-    },
-    "healingArts": {
-      "position": "PDG, HealingArts",
-      "recommendation": "\"Travailler avec Moses a été un plaisir. Il a su m'expliquer les exigences techniques du projet, et j'ai particulièrement apprécié sa profonde compréhension de ma vision...\""
     }
   },
   "About": {
     "sectionHeader": {
       "header": "À propos de moi",
       "title": "Éducation",
-      "description": "Poursuite d'un Bachelor of Arts en Relations Internationales à l'Université Méthodiste du Kenya."
+      "description": "Licence en Relations Internationales à l'Université Internationale des États-Unis-Afrique (USIU)"
     },
     "books": {
       "booksHeader": {
-        "title": "Ce que je lis",
+        "title": "Littérature",
         "description": "Les livres qui ont façonné mes perspectives"
       }
     },
     "hobbies": {
       "hobbiesCard": {
-        "title": "En dehors du codage",
+        "title": "En dehors de la Tech",
         "description": "J'aime"
       },
       "meditating": "Conception CNC",
       "gaming": "Jeux vidéo",
       "reading": "Lecture",
       "cooking": "Cuisine",
-      "traveling": "Voyages"
+      "traveling": "Voyages",
+      "swimming": "Natation",
+      "diplomacy": "Diplomatie",
+      "hiking": "Randonnée"
     },
     "toolboxCard": {
       "title": "Ma boîte à outils",
