@@ -1,4 +1,5 @@
 import Hero from '../sections/Hero'
+import Promotion from '../sections/Promotion'
 import Projects from '../sections/Projects'
 import Banner from '../sections/Banner'
 import References from '../sections/References'
