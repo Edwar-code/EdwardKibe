@@ -9,7 +9,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/src/i18n/routing'
-import Promotion from '@/app/sections/Promotion'
+import Promotion from '../../sections/Promotion'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
