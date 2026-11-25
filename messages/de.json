@@ -16,16 +16,12 @@
   "Promotion": {
     "header": "Promotion à Durée Limitée",
     "badge": "Campagne de 2 Semaines",
-    "title": "Indicateurs de Trading Personnalisés - Pour Recherche et Analyse",
-    "description": "Création d'indicateurs / algorithmes pour la recherche et l'analyse et correction de bugs pour seulement 35 $. Cette promotion restera valable un moment alors que je retrouve mes clients après mon absence.",
+    "title": "Indicateurs",
+    "description": "Création d'indicateurs / algorithmes pour la recherche et l'analyse et correction de bugs pour seulement 35 $.",
     "price": "35 $",
     "duration": "2 Semaines Seulement",
-    "features1": "Création d'Indicateur Personnalisé",
-    "features2": "Correction de Bugs pour Indicateurs Existants",
-    "features3": "Conçu pour la Recherche et l'Analyse",
+
     "buttonClaim": "Profiter de l'Offre à 35 $",
-    "buttonContact": "Demander sur la Promotion",
-    "note": "Pour la recherche et l'analyse uniquement. Pas un conseil financier."
   },
   "Projects": {
     "header": "PDG, Krinzie Devs",
