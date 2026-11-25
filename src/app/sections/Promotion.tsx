@@ -40,20 +40,11 @@ export default function Promotion() {
             </p>
           </div>
 
-          <ul className="text-left space-y-2 text-sm md:text-base">
-            <li>✅ {t("features1")}</li>
-            <li>✅ {t("features2")}</li>
-            <li>✅ {t("features3")}</li>
-          </ul>
+        
         </div>
 
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href="#contact"
-            className="rounded-full bg-yellow-400 px-6 py-3 font-bold text-black hover:bg-yellow-300 transition"
-          >
-            {t("buttonClaim")}
-          </a>
+          
           <a
             href="#contact"
             className="rounded-full border border-white/20 px-6 py-3 font-semibold hover:bg-white/10 transition"
