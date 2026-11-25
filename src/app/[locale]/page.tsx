@@ -16,8 +16,9 @@ function Home() {
     <div>
       <Navbar />
       <Hero />
+          <Promotion />
       <Projects />
-      <Banner />
+            <Banner />
       <References />
       <About />
       <Contact />
