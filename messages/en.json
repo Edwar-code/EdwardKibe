@@ -13,6 +13,20 @@
     "buttonContact": "Say Hi!",
     "buttonViewCV": "View CV"
   },
+  "Promotion": {
+    "header": "Limited Time Promotion",
+    "badge": "2-Week Campaign",
+    "title": "Custom Trading Indicators - For Research & Analysis",
+    "description": "Building indicators / algorithms for use in research and analysis and fixing bugs for as low as $35. This promotion will hold for a while as I welcome back my clients after being away.",
+    "price": "$35",
+    "duration": "2 Weeks Only",
+    "features1": "Custom Indicator Building",
+    "features2": "Bug Fixing for Existing Indicators",
+    "features3": "Built for Research & Analysis",
+    "buttonClaim": "Claim $35 Offer",
+    "buttonContact": "Ask About Promotion",
+    "note": "For research and analysis purposes only. Not financial advice."
+  },
   "Projects": {
     "header": " Krinzie Devs",
     "title": "Featured Projects",
